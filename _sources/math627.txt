@@ -1,0 +1,52 @@
+Fourier Analysis (MATH 627)
+===========================
+
+Convolutions
+------------
+
+Given two :math:`2\pi`-periodic integrable functions :math:`f` and :math:`g` on
+:math:`\mathbb{R}`, we define their **convolution** :math:`f*g` on :math:`[-\pi, \pi]` by
+
+.. math::
+    (f*g)(x) = \frac{1}{2\pi}\int_{-\pi}^{\pi}f(y)g(x-y) dy.
+   :label: convolution
+
+Since functions are periodic, we can change variables to see that
+
+.. math::
+    (f*g)(x) = \frac{1}{2\pi}\int_{-\pi}^{\pi}f(x-y)g(y) dy.
+
+
+
+Kernels
+-------
+
+Dirichlet kernel
+****************
+.. math::
+    D_N(x) = \sum_{n=-N}^{N}e^{inx}.
+   :label: dirichletKernel
+
+Fejer kernel
+****************
+
+.. math::
+    F_N(x) = \frac{D_0(x) + \cdots + D_{N-1}(x)}{N}
+   :label: fejerKernel
+
+where :math:`D_n(x) (n=0,\dots, N-1)` is the `Dirichlet kernel`_.
+
+Also, we have
+
+.. math::
+    F_N(x) = \frac{1}{N} \frac{\sin^2(Nx/2)}{\sin^2(x/2)}.
+
+
+
+
+References
+----------
+.. [1] Stein, E. M. & Shakarchi, R. Fourier Analysis: An Introduction. (World Book Publishing Company, 2011).
+
+
+
