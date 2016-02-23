@@ -6,19 +6,31 @@
 Welcome to MathWiki
 ====================================
 
-When I was working on my PhD math homeworks, I got tired of scrolling the textbook back and forth to check the definitions or equations -- how inconvenient!
-Then I thought that I need a personal wiki on mathematics.
+When I was working on my math homeworks at UW-Madison, I got tired of scrolling the textbook back and forth to check the definitions or equations -- how inconvenient!
+Then I thought that I need a personal wiki on mathematics, and I built this website.
+
 **Why do I need a personal wiki on mathematics?**
-There are Wikipeida and Wolfram MathWorld that I used a lot, but they are not about the textbooks that I used, also, they are not editable to me, and I need a personal wiki system to review what I have learnt in my class.
+There are `Wikipeida <https://www.wikipedia.org>`_ and `Wolfram MathWorld <http://mathworld.wolfram.com>`_ that I used a lot, but they are not about the textbooks that I used, also, they are not editable to me, and I need a personal wiki system to *organize* and *review* what I have learnt in my class.
 
 **MathWiki** is the wiki that helps me learning mathematics.
+The content is mainly abstracted from the textbooks that I used for my class and from the Internet resources, with my own editting and notation for the convenience of understanding.
+The references for the content are listed in the end of each webpage.
 It is very personal, specific about what I have learnt in my class.
 Still, people working on mathematics can use this for their work since basic concepts are lists.
 
-You can start by the "quick search" in sidebar or by the TOC below.
-Enjoy!
+Mathwiki is powered by `Sphinx <http://www.sphinx-doc.org>`_ -- a Python documentation generator.
+I use it as a wiki system since it has features:
 
-Last update: 2016-02-21.
+* Auto generated links for each headings.
+* `MathJax <https://www.mathjax.org/>`_ support.
+* HTML generation with nice embeded themes.
+* Editting with `reStructuredText <http://docutils.sourceforge.net/rst.html>`_ (a markup language that is lightweighted).
+
+**You can start using this wiki by the "quick search" in the sidebar or by the TOC below.**
+
+Thanks for reading. Enjoy!
+
+Last update: 2016-02-23
 
 Contents:
 

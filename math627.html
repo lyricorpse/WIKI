@@ -41,31 +41,146 @@
             
   <div class="section" id="fourier-analysis-math-627">
 <h1>Fourier Analysis (MATH 627)<a class="headerlink" href="#fourier-analysis-math-627" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="fourier-coefficient-and-serires">
+<h2>Fourier coefficient and serires<a class="headerlink" href="#fourier-coefficient-and-serires" title="Permalink to this headline">¶</a></h2>
+<p>The <span class="math">\(n\)</span>-th <strong>Fourier coefficient</strong> of <span class="math">\(f(x)\)</span> (defined on the interval <span class="math">\([-\pi,\pi]\)</span>) is</p>
+<div class="math">
+\[\hat{f}(n) = a_n = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(x) e^{-inx} dx, n \in \mathbb{Z},\]</div>
+<p>and the <strong>Fourier series</strong> of <span class="math">\(f\)</span> is</p>
+<div class="math">
+\[f(x) = \sum_{-\infty}^{\infty} a_n e^{inx}, x \in [-\pi, \pi].\]</div>
+<p>An important identity of Fourier series:</p>
+<div class="math">
+\[\hat{f}'(n) = in\hat{f}(n), \text{ for all }n\in\mathbb{Z}.\]</div>
+</div>
+<div class="section" id="partial-sum">
+<h2>Partial sum<a class="headerlink" href="#partial-sum" title="Permalink to this headline">¶</a></h2>
+<p>The <span class="math">\(N\)</span>-th <strong>partial sum</strong> of the Fourier series of <span class="math">\(f\)</span> (defined on the interval <span class="math">\([-\pi,\pi]\)</span>) is a trigonometric polynomial given by</p>
+<div class="math">
+\[\begin{split}S_N(f)(x) = \sum_{n=-N}^{N}\hat{f}(n)e^{inx}, N&gt;0.\end{split}\]</div>
+<p>With the <a class="reference internal" href="#dirichlet-kernel">Dirichlet kernel</a> and the idea of <a class="reference internal" href="#convolutions">convolutions</a>, it follows that</p>
+<div class="math">
+\[\begin{split}S_N(f)(x) &amp;= \sum_{n=-N}^{N}\hat{f}(n)e^{inx} \\
+&amp;= \sum_{n=-N}^{N} \left(\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\xi)e^{-in\xi}d\xi\right) e^{inx} \\
+&amp;= \frac{1}{2\pi}\int_{-\pi}^{\pi}f(\xi)\left(\sum_{n=-N}^{N} e^{in(x-\xi)}\right)d\xi \\
+&amp;= (f*D_N)(x).\end{split}\]</div>
+</div>
 <div class="section" id="convolutions">
 <h2>Convolutions<a class="headerlink" href="#convolutions" title="Permalink to this headline">¶</a></h2>
 <p>Given two <span class="math">\(2\pi\)</span>-periodic integrable functions <span class="math">\(f\)</span> and <span class="math">\(g\)</span> on
 <span class="math">\(\mathbb{R}\)</span>, we define their <strong>convolution</strong> <span class="math">\(f*g\)</span> on <span class="math">\([-\pi, \pi]\)</span> by</p>
-<div class="math" id="equation-convolution">
-<span class="eqno">(1)</span>\[(f*g)(x) = \frac{1}{2\pi}\int_{-\pi}^{\pi}f(y)g(x-y) dy.\]</div>
+<div class="math">
+\[(f*g)(x) = \frac{1}{2\pi}\int_{-\pi}^{\pi}f(\xi)g(x-\xi) d\xi.\]</div>
 <p>Since functions are periodic, we can change variables to see that</p>
 <div class="math">
-\[(f*g)(x) = \frac{1}{2\pi}\int_{-\pi}^{\pi}f(x-y)g(y) dy.\]</div>
+\[(f*g)(x) = \frac{1}{2\pi}\int_{-\pi}^{\pi}f(x-\xi)g(\xi) d\xi.\]</div>
+<p>Convolutions can be interpreted as <strong>weighted averages</strong>, in this context, the convolution</p>
+<div class="math">
+\[(f*K_n)(x) = \frac{1}{2\pi}\int_{-\pi}^{\pi}f(x-\xi)K_n(\xi) d\xi\]</div>
+<p>is the average of <span class="math">\(f(x-\xi)\)</span>, where the weights are given by <span class="math">\(K_n(y)\)</span>.</p>
+<p>Some <strong>propositions</strong> (<span class="math">\(f,g,h\)</span> are <span class="math">\(2\pi\)</span>-periodic integrable functions):</p>
+<div class="math">
+\[\begin{split}&amp; f*(g+h) = (f*g) + (f*h), \\
+&amp; (cf)*g = c(f*g) - f*(ch) \text{ for any }c\in\mathbb{C}, \\
+&amp; f*g=g*f, \\
+&amp; (f*g)*h = f*(g*h), \\
+&amp; f*g \text{ is continuous}, \\
+&amp; \widehat{f*g}(n) = \hat{f}(n)\hat{g}(n).\end{split}\]</div>
 </div>
 <div class="section" id="kernels">
 <h2>Kernels<a class="headerlink" href="#kernels" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="good-kernels">
+<h3>Good kernels<a class="headerlink" href="#good-kernels" title="Permalink to this headline">¶</a></h3>
+<p><strong>Good kernels</strong> should satisfie three properties:</p>
+<ul>
+<li><p class="first">For all <span class="math">\(n\ge 1\)</span>,</p>
+<div class="math">
+\[\frac{1}{2\pi}\int_{-\pi}^{\pi}K_n(x)dx = 1.\]</div>
+</li>
+<li><p class="first">There exists <span class="math">\(M&gt;0\)</span> such that for all <span class="math">\(n\ge 1\)</span>,</p>
+<div class="math">
+\[\int_{-\pi}^{\pi}|K_n(x)|dx \le M.\]</div>
+</li>
+<li><p class="first">For all <span class="math">\(\delta &gt; 0\)</span>,</p>
+<div class="math">
+\[\int_{\delta\le |x| \le \pi}|K_n(x)|dx \rightarrow 0~(n\rightarrow \infty).\]</div>
+</li>
+</ul>
+<p>Also, the family of good kernels is refereed to as an <strong>approximation to the identity</strong> because</p>
+<div class="math">
+\[\lim_{n\rightarrow \infty}(f*K_n)(x) = f(x).\]</div>
+</div>
 <div class="section" id="dirichlet-kernel">
 <h3>Dirichlet kernel<a class="headerlink" href="#dirichlet-kernel" title="Permalink to this headline">¶</a></h3>
 <div class="math" id="equation-dirichletKernel">
-<span class="eqno">(2)</span>\[D_N(x) = \sum_{n=-N}^{N}e^{inx}.\]</div>
+<span class="eqno">(1)</span>\[D_N(x) = \sum_{n=-N}^{N}e^{inx}.\]</div>
+<p>Also, we have</p>
+<div class="math">
+\[D_N(x) = \frac{\sin[(N+1/2)x]}{\sin(x/2)}.\]</div>
 </div>
 <div class="section" id="fejer-kernel">
 <h3>Fejer kernel<a class="headerlink" href="#fejer-kernel" title="Permalink to this headline">¶</a></h3>
 <div class="math" id="equation-fejerKernel">
-<span class="eqno">(3)</span>\[F_N(x) = \frac{D_0(x) + \cdots + D_{N-1}(x)}{N}\]</div>
+<span class="eqno">(2)</span>\[F_N(x) = \frac{D_0(x) + \cdots + D_{N-1}(x)}{N}\]</div>
 <p>where <span class="math">\(D_n(x) (n=0,\dots, N-1)\)</span> is the <a class="reference internal" href="#dirichlet-kernel">Dirichlet kernel</a>.</p>
 <p>Also, we have</p>
 <div class="math">
 \[F_N(x) = \frac{1}{N} \frac{\sin^2(Nx/2)}{\sin^2(x/2)}.\]</div>
+</div>
+<div class="section" id="poisson-kernel">
+<h3>Poisson kernel<a class="headerlink" href="#poisson-kernel" title="Permalink to this headline">¶</a></h3>
+<div class="math">
+\[\begin{split}P_r(x) = \sum_{n=-\infty}^{\infty}r^{|n|}e^{inx}, 0\le r &lt; 1.\end{split}\]</div>
+</div>
+</div>
+<div class="section" id="summability">
+<h2>Summability<a class="headerlink" href="#summability" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="cesaro-summability">
+<h3>Cesaro summability<a class="headerlink" href="#cesaro-summability" title="Permalink to this headline">¶</a></h3>
+<p>Define the <span class="math">\(n\)</span>-th partial sum of a series of complex numnbers <span class="math">\(\sum_{k=0}^{\infty}c_k\)</span> as <span class="math">\(s_n\)</span>, then the <span class="math">\(N\)</span>-th <strong>Cesaro mean</strong> of the sequence <span class="math">\(\{s_k\}\)</span> or the <strong>Cesaro sum</strong> of the series <span class="math">\(\sum_{k=0}^{\infty}c_k\)</span> is</p>
+<div class="math">
+\[\sigma_N = \frac{1}{N}\sum_{k=0}^{N-1}s_k.\]</div>
+<p>If <span class="math">\(\sigma_N\)</span> converges to a limit <span class="math">\(\sigma\)</span> as <span class="math">\(N\rightarrow \infty\)</span>, we say that the series <cite>sum_{k=0}^{infty}c_k</cite> is <strong>Cesaro summable</strong> to <span class="math">\(\sigma\)</span>.</p>
+<p>The <span class="math">\(N\)</span>-th <strong>Cesaro mean of the Fourier series</strong> is defined as</p>
+<div class="math">
+\[\sigma_N(f)(x) = \frac{1}{N}\sum_{k=0}^{N-1}S_{k}(f)(x) = (f*F_N)(x),\]</div>
+<p>where <span class="math">\(F_N(x)\)</span> is the <span class="math">\(N\)</span>-th <a class="reference internal" href="#fejer-kernel">Fejer kernel</a>.</p>
+</div>
+<div class="section" id="abel-summability">
+<h3>Abel summability<a class="headerlink" href="#abel-summability" title="Permalink to this headline">¶</a></h3>
+<p>A series of complex numbers <span class="math">\(\sum_{k=0}^{\infty}c_k\)</span> is said to be <strong>Abel summable</strong> to <span class="math">\(s\)</span> if for every <span class="math">\(0\le r&lt;1\)</span>, the <strong>Abel mean</strong></p>
+<div class="math">
+\[A(r) = \sum_{k=0}^{\infty}c_k r^k\]</div>
+<p>converges, and</p>
+<div class="math">
+\[\lim_{r\rightarrow 1}A(r) = s.\]</div>
+<p>The <strong>Abel mean of Fourier series</strong> is</p>
+<div class="math">
+\[A_r(f)(x) = \sum_{n=-\infty}^{\infty}r^{|n|} a_n e^{in x} = (f*P_r)(x),\]</div>
+<p>where <span class="math">\(P_r(x)\)</span> is the <a class="reference internal" href="#poisson-kernel">Poisson kernel</a>.</p>
+</div>
+</div>
+<div class="section" id="inequalities">
+<h2>Inequalities<a class="headerlink" href="#inequalities" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="triangle-inequality">
+<h3>Triangle inequality<a class="headerlink" href="#triangle-inequality" title="Permalink to this headline">¶</a></h3>
+<p>In a normed vector space <span class="math">\(V\)</span>, for all <span class="math">\(\mathbf{x},\mathbf{y}\in V\)</span>, we have</p>
+<div class="math">
+\[\Vert \mathbf{x} + \mathbf{y} \Vert \le \Vert \mathbf{x} \Vert + \Vert \mathbf{y} \Vert.\]</div>
+</div>
+<div class="section" id="cauchyschwarz-inequaliy">
+<h3>Cauchy–Schwarz inequaliy<a class="headerlink" href="#cauchyschwarz-inequaliy" title="Permalink to this headline">¶</a></h3>
+<p>For all vectors <span class="math">\(x,y\)</span> of an inner product space it is true that</p>
+<div class="math">
+\[|(\mathbf{x},\mathbf{y})| \le \Vert \mathbf{x} \Vert \Vert \mathbf{y} \Vert,\]</div>
+<p>where <span class="math">\((\mathbf{x},\mathbf{y})\)</span> is the inner product.</p>
+</div>
+<div class="section" id="minkowski-inequality">
+<h3>Minkowski inequality<a class="headerlink" href="#minkowski-inequality" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math">\(S\)</span> be a measure space, the Minkowski inequality is the <a class="reference internal" href="#triangle-inequality">triangle inequality</a> in <span class="math">\(L^p(S)\)</span> with <span class="math">\(1\le p\le\infty\)</span>.</p>
+<p>For all <span class="math">\(\mathbf{x},\mathbf{y}\in S\)</span>, we have</p>
+<div class="math">
+\[\Vert \mathbf{x} + \mathbf{y} \Vert_p \le \Vert \mathbf{x} \Vert_p + \Vert \mathbf{y} \Vert_p.\]</div>
 </div>
 </div>
 <div class="section" id="references">
@@ -74,6 +189,12 @@
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label">[1]</td><td>Stein, E. M. &amp; Shakarchi, R. Fourier Analysis: An Introduction. (World Book Publishing Company, 2011).</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td>Wikipedia</td></tr>
 </tbody>
 </table>
 </div>
@@ -86,15 +207,30 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="index.html">
-              <img class="logo" src="_static/logo.svg" alt="Logo"/>
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
             </a></p>
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Fourier Analysis (MATH 627)</a><ul>
+<li><a class="reference internal" href="#fourier-coefficient-and-serires">Fourier coefficient and serires</a></li>
+<li><a class="reference internal" href="#partial-sum">Partial sum</a></li>
 <li><a class="reference internal" href="#convolutions">Convolutions</a></li>
 <li><a class="reference internal" href="#kernels">Kernels</a><ul>
+<li><a class="reference internal" href="#good-kernels">Good kernels</a></li>
 <li><a class="reference internal" href="#dirichlet-kernel">Dirichlet kernel</a></li>
 <li><a class="reference internal" href="#fejer-kernel">Fejer kernel</a></li>
+<li><a class="reference internal" href="#poisson-kernel">Poisson kernel</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#summability">Summability</a><ul>
+<li><a class="reference internal" href="#cesaro-summability">Cesaro summability</a></li>
+<li><a class="reference internal" href="#abel-summability">Abel summability</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#inequalities">Inequalities</a><ul>
+<li><a class="reference internal" href="#triangle-inequality">Triangle inequality</a></li>
+<li><a class="reference internal" href="#cauchyschwarz-inequaliy">Cauchy–Schwarz inequaliy</a></li>
+<li><a class="reference internal" href="#minkowski-inequality">Minkowski inequality</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#references">References</a></li>

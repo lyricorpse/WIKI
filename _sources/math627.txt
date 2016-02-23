@@ -1,6 +1,41 @@
 Fourier Analysis (MATH 627)
 ===========================
 
+Fourier coefficient and serires
+-------------------------------
+
+The :math:`n`-th **Fourier coefficient** of :math:`f(x)` (defined on the interval :math:`[-\pi,\pi]`) is
+
+.. math::
+    \hat{f}(n) = a_n = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(x) e^{-inx} dx, n \in \mathbb{Z},
+
+and the **Fourier series** of :math:`f` is
+
+.. math::
+    f(x) = \sum_{-\infty}^{\infty} a_n e^{inx}, x \in [-\pi, \pi].
+
+An important identity of Fourier series:
+
+.. math::
+    \hat{f}'(n) = in\hat{f}(n), \text{ for all }n\in\mathbb{Z}.
+
+
+Partial sum
+-----------
+The :math:`N`-th **partial sum** of the Fourier series of :math:`f` (defined on the interval :math:`[-\pi,\pi]`) is a trigonometric polynomial given by
+
+.. math::
+    S_N(f)(x) = \sum_{n=-N}^{N}\hat{f}(n)e^{inx}, N>0.
+
+With the `Dirichlet kernel`_ and the idea of `convolutions`_, it follows that
+
+.. math::
+    S_N(f)(x) &= \sum_{n=-N}^{N}\hat{f}(n)e^{inx} \\
+    &= \sum_{n=-N}^{N} \left(\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\xi)e^{-in\xi}d\xi\right) e^{inx} \\
+    &= \frac{1}{2\pi}\int_{-\pi}^{\pi}f(\xi)\left(\sum_{n=-N}^{N} e^{in(x-\xi)}\right)d\xi \\
+    &= (f*D_N)(x).
+
+
 Convolutions
 ------------
 
@@ -8,18 +43,58 @@ Given two :math:`2\pi`-periodic integrable functions :math:`f` and :math:`g` on
 :math:`\mathbb{R}`, we define their **convolution** :math:`f*g` on :math:`[-\pi, \pi]` by
 
 .. math::
-    (f*g)(x) = \frac{1}{2\pi}\int_{-\pi}^{\pi}f(y)g(x-y) dy.
-   :label: convolution
+    (f*g)(x) = \frac{1}{2\pi}\int_{-\pi}^{\pi}f(\xi)g(x-\xi) d\xi.
 
 Since functions are periodic, we can change variables to see that
 
 .. math::
-    (f*g)(x) = \frac{1}{2\pi}\int_{-\pi}^{\pi}f(x-y)g(y) dy.
+    (f*g)(x) = \frac{1}{2\pi}\int_{-\pi}^{\pi}f(x-\xi)g(\xi) d\xi.
 
+Convolutions can be interpreted as **weighted averages**, in this context, the convolution
+
+.. math::
+    (f*K_n)(x) = \frac{1}{2\pi}\int_{-\pi}^{\pi}f(x-\xi)K_n(\xi) d\xi
+
+is the average of :math:`f(x-\xi)`, where the weights are given by :math:`K_n(y)`.
+
+Some **propositions** (:math:`f,g,h` are :math:`2\pi`-periodic integrable functions):
+
+.. math::
+    & f*(g+h) = (f*g) + (f*h), \\
+    & (cf)*g = c(f*g) - f*(ch) \text{ for any }c\in\mathbb{C}, \\
+    & f*g=g*f, \\
+    & (f*g)*h = f*(g*h), \\
+    & f*g \text{ is continuous}, \\
+    & \widehat{f*g}(n) = \hat{f}(n)\hat{g}(n).
 
 
 Kernels
 -------
+
+Good kernels
+************
+**Good kernels** should satisfie three properties:
+
+* For all :math:`n\ge 1`,
+
+  .. math::
+      \frac{1}{2\pi}\int_{-\pi}^{\pi}K_n(x)dx = 1.
+
+* There exists :math:`M>0` such that for all :math:`n\ge 1`,
+
+  .. math::
+      \int_{-\pi}^{\pi}|K_n(x)|dx \le M.
+
+* For all :math:`\delta > 0`,
+
+  .. math::
+      \int_{\delta\le |x| \le \pi}|K_n(x)|dx \rightarrow 0~(n\rightarrow \infty).
+
+Also, the family of good kernels is refereed to as an **approximation to the identity** because
+
+.. math::
+    \lim_{n\rightarrow \infty}(f*K_n)(x) = f(x).
+
 
 Dirichlet kernel
 ****************
@@ -27,8 +102,13 @@ Dirichlet kernel
     D_N(x) = \sum_{n=-N}^{N}e^{inx}.
    :label: dirichletKernel
 
+Also, we have
+
+.. math::
+    D_N(x) = \frac{\sin[(N+1/2)x]}{\sin(x/2)}.
+
 Fejer kernel
-****************
+************
 
 .. math::
     F_N(x) = \frac{D_0(x) + \cdots + D_{N-1}(x)}{N}
@@ -41,12 +121,88 @@ Also, we have
 .. math::
     F_N(x) = \frac{1}{N} \frac{\sin^2(Nx/2)}{\sin^2(x/2)}.
 
+Poisson kernel
+**************
 
+.. math::
+    P_r(x) = \sum_{n=-\infty}^{\infty}r^{|n|}e^{inx}, 0\le r < 1.
+
+
+
+Summability
+-----------
+
+Cesaro summability
+******************
+
+Define the :math:`n`-th partial sum of a series of complex numnbers :math:`\sum_{k=0}^{\infty}c_k` as :math:`s_n`, then the :math:`N`-th **Cesaro mean** of the sequence :math:`\{s_k\}` or the **Cesaro sum** of the series :math:`\sum_{k=0}^{\infty}c_k` is
+
+.. math::
+    \sigma_N = \frac{1}{N}\sum_{k=0}^{N-1}s_k.
+
+If :math:`\sigma_N` converges to a limit :math:`\sigma` as :math:`N\rightarrow \infty`, we say that the series `\sum_{k=0}^{\infty}c_k` is **Cesaro summable** to :math:`\sigma`.
+
+The :math:`N`-th **Cesaro mean of the Fourier series** is defined as
+
+.. math::
+    \sigma_N(f)(x) = \frac{1}{N}\sum_{k=0}^{N-1}S_{k}(f)(x) = (f*F_N)(x),
+
+where :math:`F_N(x)` is the :math:`N`-th `Fejer kernel`_.
+
+Abel summability
+****************
+A series of complex numbers :math:`\sum_{k=0}^{\infty}c_k` is said to be **Abel summable** to :math:`s` if for every :math:`0\le r<1`, the **Abel mean**
+
+.. math::
+    A(r) = \sum_{k=0}^{\infty}c_k r^k
+
+converges, and
+
+.. math::
+    \lim_{r\rightarrow 1}A(r) = s.
+
+The **Abel mean of Fourier series** is
+
+.. math::
+    A_r(f)(x) = \sum_{n=-\infty}^{\infty}r^{|n|} a_n e^{in x} = (f*P_r)(x),
+
+where :math:`P_r(x)` is the `Poisson kernel`_.
+
+
+Inequalities
+------------
+
+Triangle inequality
+*******************
+In a normed vector space :math:`V`, for all :math:`\mathbf{x},\mathbf{y}\in V`, we have
+
+.. math::
+    \Vert \mathbf{x} + \mathbf{y} \Vert \le \Vert \mathbf{x} \Vert + \Vert \mathbf{y} \Vert.
+
+
+Cauchy–Schwarz inequaliy
+*************************
+For all vectors :math:`x,y` of an inner product space it is true that
+
+.. math::
+    |(\mathbf{x},\mathbf{y})| \le \Vert \mathbf{x} \Vert \Vert \mathbf{y} \Vert,
+
+where :math:`(\mathbf{x},\mathbf{y})` is the inner product.
+
+Minkowski inequality
+********************
+Let :math:`S` be a measure space, the Minkowski inequality is the `triangle inequality`_ in :math:`L^p(S)` with :math:`1\le p\le\infty`.
+
+For all :math:`\mathbf{x},\mathbf{y}\in S`, we have
+
+.. math::
+    \Vert \mathbf{x} + \mathbf{y} \Vert_p \le \Vert \mathbf{x} \Vert_p + \Vert \mathbf{y} \Vert_p.
 
 
 References
 ----------
 .. [1] Stein, E. M. & Shakarchi, R. Fourier Analysis: An Introduction. (World Book Publishing Company, 2011).
+.. [2] Wikipedia
 
 
 
