@@ -140,7 +140,7 @@
 <p>Define the <span class="math">\(n\)</span>-th partial sum of a series of complex numnbers <span class="math">\(\sum_{k=0}^{\infty}c_k\)</span> as <span class="math">\(s_n\)</span>, then the <span class="math">\(N\)</span>-th <strong>Cesaro mean</strong> of the sequence <span class="math">\(\{s_k\}\)</span> or the <strong>Cesaro sum</strong> of the series <span class="math">\(\sum_{k=0}^{\infty}c_k\)</span> is</p>
 <div class="math">
 \[\sigma_N = \frac{1}{N}\sum_{k=0}^{N-1}s_k.\]</div>
-<p>If <span class="math">\(\sigma_N\)</span> converges to a limit <span class="math">\(\sigma\)</span> as <span class="math">\(N\rightarrow \infty\)</span>, we say that the series <cite>sum_{k=0}^{infty}c_k</cite> is <strong>Cesaro summable</strong> to <span class="math">\(\sigma\)</span>.</p>
+<p>If <span class="math">\(\sigma_N\)</span> converges to a limit <span class="math">\(\sigma\)</span> as <span class="math">\(N\rightarrow \infty\)</span>, we say that the series <span class="math">\(\sum_{k=0}^{\infty}c_k\)</span> is <strong>Cesaro summable</strong> to <span class="math">\(\sigma\)</span>.</p>
 <p>The <span class="math">\(N\)</span>-th <strong>Cesaro mean of the Fourier series</strong> is defined as</p>
 <div class="math">
 \[\sigma_N(f)(x) = \frac{1}{N}\sum_{k=0}^{N-1}S_{k}(f)(x) = (f*F_N)(x),\]</div>
@@ -159,6 +159,25 @@
 \[A_r(f)(x) = \sum_{n=-\infty}^{\infty}r^{|n|} a_n e^{in x} = (f*P_r)(x),\]</div>
 <p>where <span class="math">\(P_r(x)\)</span> is the <a class="reference internal" href="#poisson-kernel">Poisson kernel</a>.</p>
 </div>
+</div>
+<div class="section" id="norm">
+<h2>Norm<a class="headerlink" href="#norm" title="Permalink to this headline">¶</a></h2>
+<p>On a <span class="math">\(L^p\)</span> space, the <span class="math">\(p\)</span>-norm of a vector <span class="math">\(\mathbf{x} = (x_1, x_2, \dots, x_n)\)</span> is given by</p>
+<div class="math">
+\[\Vert \mathbf{x} \Vert_p = \left(\sum_{k=1}^{n}|x_k|^p\right)^{1/p},\]</div>
+<p>where <span class="math">\(1\le p \le \infty\)</span>.</p>
+<p>Specifically, when <span class="math">\(p=1\)</span>, we have</p>
+<div class="math">
+\[\Vert \mathbf{x} \Vert_1 = \sum_{k=1}^{n}|x_k|;\]</div>
+<p>when <span class="math">\(p=2\)</span>, we have the <strong>Euclidean norm</strong></p>
+<div class="math">
+\[\Vert \mathbf{x} \Vert_2 = \Vert \mathbf{x} \Vert = \sqrt{\sum_{k=1}^{n}x_k^2};\]</div>
+<p>when <span class="math">\(p\rightarrow\infty\)</span>, we have</p>
+<div class="math">
+\[\Vert \mathbf{x} \Vert_{\infty} = \max_{i} |x_i|.\]</div>
+<p>With <span class="math">\(p_1 &lt; p_2\)</span>, we have</p>
+<div class="math">
+\[\Vert \mathbf{x} \Vert_{p_2} \le \Vert \mathbf{x} \Vert_{p_1}.\]</div>
 </div>
 <div class="section" id="inequalities">
 <h2>Inequalities<a class="headerlink" href="#inequalities" title="Permalink to this headline">¶</a></h2>
@@ -194,7 +213,7 @@
 <table class="docutils footnote" frame="void" id="id2" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[2]</td><td>Wikipedia</td></tr>
+<tr><td class="label">[2]</td><td>Wikipedia.</td></tr>
 </tbody>
 </table>
 </div>
@@ -227,6 +246,7 @@
 <li><a class="reference internal" href="#abel-summability">Abel summability</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#norm">Norm</a></li>
 <li><a class="reference internal" href="#inequalities">Inequalities</a><ul>
 <li><a class="reference internal" href="#triangle-inequality">Triangle inequality</a></li>
 <li><a class="reference internal" href="#cauchyschwarz-inequaliy">Cauchy–Schwarz inequaliy</a></li>

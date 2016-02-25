@@ -1,15 +1,204 @@
 Analysis I (MATH 521)
 =====================
+Last update: 2016-02-25
+
+Ordered set
+-----------
+
+Let :math:`S` be a set. An **order** on :math:`S` is a relation, denoted by :math:`<`, with the following two properties:
+
+* If :math:`x\in S` and :math:`y\in S` then one and only one of the statements below is true:
+
+  .. math::
+      x<y, \hspace{1em}x=y, \hspace{1em}y<x
+
+* If :math:`x,y,z\in S`, if :math:`x<y` and :math:`y<z`, then :math:`x<z`.
+
+An **ordered set** is a set :math:`S` in which an order is defined.
+
+Bounds
+------
+
+Upper bound
+***********
+
+Suppose :math:`S` is an `ordered set`_, and :math:`E\subset S`. If :math:`\exists \beta \in S` such that  :math:`x\le\beta~\forall x\in E`, we say that :math:`E` is **bounded above**, and call :math:`\beta` an **upper bound** of :math:`E`.
+
+Lower bound
+***********
+
+Suppose :math:`S` is an `ordered set`_, and :math:`E\subset S`. If :math:`\exists \beta \in S` such that  :math:`x\ge\beta~\forall x\in E`, we say that :math:`E` is **bounded below**, and call :math:`\beta` an **lower bound** of :math:`E`.
 
 Supremum
---------
+********
+
+Suppose :math:`S` is an `ordered set`_, :math:`E\subset S` is bounded above.
+Suppose :math:`\exists \alpha\in S` with the following two properties:
+
+* :math:`\alpha` is an `upper bound` of :math:`E`.
+* If :math:`\gamma < \alpha`, then :math:`\gamma` is not an `upper bound` of :math:`E`.
+
+Then :math:`\alpha` is called the **least upper bound** or **supremum** of :math:`E`, and is denoted as :math:`\alpha = \sup E`.
 
 Infimum
--------
+*******
+Suppose :math:`S` is an `ordered set`_, :math:`E\subset S` is bounded above.
+Suppose :math:`\exists \alpha\in S` with the following two properties:
 
+* :math:`\alpha` is an `lower bound` of :math:`E`.
+* If :math:`\gamma > \alpha`, then :math:`\gamma` is not an `lower bound` of :math:`E`.
 
+Then :math:`\alpha` is called the **greatest lower bound** or **infimum** of :math:`E`, and is denoted as :math:`\alpha = \inf E`.
 
-Metric Space
+Least-upper-bound property
+**************************
+
+An ordered set :math:`S` is said to have the least-upper-bound (LUB) property if the following is true:
+If :math:`E\subset S`, :math:`E\ne \emptyset`, and :math:`E` is bounded above, then :math:`\exists \sup E \in S`.
+
+Every `ordered set`_ with the LUB property also has the GLB property.
+
+Greatest-lower-bound property
+*****************************
+
+An ordered set :math:`S` is said to have the greast-lower-bound (GLB) property if the following is true:
+If :math:`E\subset S`, :math:`E\ne \emptyset`, and :math:`E` is bounded below, then :math:`\exists \inf E \in S`.
+
+Every `ordered set`_ with the GLB property also has the LUB property.
+
+Metric space
 ------------
 
+A set :math:`X`, whose elements we shall call **points**, is said to be a **metric space** if with any two points :math:`p` and :math:`q` of :math:`X` there is associated a real number :math:`d(p,1)`, called the **distance** from :math:`p` to :math:`q`, such that
+
+* .. math::
+    d(p,q) \begin{cases}
+    > 0, \text{ if }p\ne q, \\
+    = 0, \text{ if }p = q. \\
+    \end{cases}
+
+* :math:`d(p,q) = d(q,p)`.
+* :math:`d(p,q) \le d(p,r) + d(r,q) ~\forall r\in X`.
+
+
+Neighborhood
+************
+
+Let :math:`X` be a `metric space`_, :math:`p` is a point in :math:`X`.
+
+A **neighborhood** of :math:`p` is a set :math:`N_r(p) = \{q\in X | d(p,q) < r\}`, for some radius :math:`r>0`.
+
+Every neighborhood is an `open set`_.
+
+Limit point
+***********
+Let :math:`X` be a `metric space`_, :math:`E\subset X`, a point :math:`p\in X`.
+
+If every `neighborhood`_ of :math:`p` contains :math:`q\ne p` such that :math:`q\in E`, then :math:`p` is a **limit point** of :math:`E`.
+
+In other words, we say :math:`p\in E` is a **limit point** if: :math:`\forall N_r(p), \exists q\ne p` such that :math:`q\in E`.
+
+Isolated point
+**************
+Let :math:`X` be a `metric space`_, :math:`E\subset X`, a point :math:`p\in X`.
+
+If :math:`p\in E` is not a `limit point`_ of :math:`E`, then :math:`p` is called an **isolated point** of :math:`E`.
+
+Interior point
+**************
+Let :math:`X` be a `metric space`_, :math:`E\subset X`, a point :math:`p\in X`.
+
+If :math:`\exists N_r(p)` such that :math:`N_r(p) \subset E`, then :math:`p` is an **interior point** of :math:`E`.
+
+Closed set
+**********
+Let :math:`X` be a `metric space`_, :math:`E\subset X`.
+
+We say :math:`E` is a **closed set** if every `limit point`_ of :math:`E` is a point of :math:`E`.
+
+In other words, we say :math:`E` is a **closed set** if: if :math:`p` is a limit point of :math:`E`, then :math:`p\in E`.
+
+Open set
+********
+Let :math:`X` be a `metric space`_, :math:`E\subset X`.
+
+:math:`E` is an **open set** if every point of :math:`E` is an `interior point`_ of :math:`E`.
+
+Complement set
+**************
+Let :math:`X` be a `metric space`_, :math:`E\subset X`.
+
+The **complement set** of :math:`E` (denoted by :math:`E^c = X-E`) is the set of all points :math:`p\in X` such that :math:`p\notin E`.
+
+
+Perfect set
+***********
+Let :math:`X` be a `metric space`_, :math:`E\subset X`.
+
+If :math:`E` is a `closed set`_ (every `limit point`_ of :math:`E` is a point of :math:`E`) and if every point of :math:`E` is a `limit point`_ of :math:`E`.
+
+Bounded set
+***********
+Let :math:`X` be a `metric space`_, :math:`E\subset X`.
+
+:math:`E` is a **bounded set** if :math:`\exists M\in\mathbb{R}` and a point :math:`q\in X` such that :math:`d(p,q)<M~\forall p\in E`.
+
+Dense
+*****
+Let :math:`X` be a `metric space`_, :math:`E\subset X`.
+
+:math:`E` is **dense** in :math:`X` if every point of :math:`X` is a `limit point`_ of :math:`E`, or a point of :math:`E` (or both).
+
+Closure
+*******
+Let :math:`X` be a `metric space`_, :math:`E\subset X`.
+
+Denote the set of all `limit point`_ s of :math:`E\subset X`, then the **closure** of :math:`E` is the set :math:`\bar{E} = E\cup E'`.
+
+Some theorems:
+
+* :math:`\bar{E}` is a `closed set`_.
+* :math:`E= \bar{E}` if and only if :math:`E` is a `closed set`_.
+* :math:`\bar{E} \subset F` for every `closed set`_ :math:`F\subset X` such that :math:`E \subset F`.
+
+De Morgan's laws
+----------------
+
+Let :math:`\{E_{\alpha}\}` be a collection of sets :math:`E_{\alpha}`, then
+
+.. math::
+    \left(\cup_{\alpha} E_{\alpha}\right)^c = \cap_{\alpha}(E_{\alpha}^c), \\
+    \left(\cap_{\alpha} E_{\alpha}\right)^c = \cup_{\alpha}(E_{\alpha}^c).
+
+Compact set
+-----------
+
+Open cover
+**********
+Let :math:`X` be a `metric space`_, :math:`E\subset X`.
+
+An **open cover** of :math:`E\subset X` is the collection :math:`\{G_{\alpha}\}` of open subsets of :math:`X` such that :math:`E\subset \cup_{\alpha} G_{\alpha}`.
+
+Compact
+*******
+Let :math:`X` be a `metric space`_, :math:`K\subset X`.
+
+:math:`K` is said to be **compact** if every `open cover`_ of :math:`K` contains a finite subcover.
+
+In other words, :math:`\exists \alpha_1, \dots, \alpha_n` (finitely many indices) such that
+
+.. math::
+    K \subset G_{\alpha_1} \cdots \cup G_{\alpha_n}
+
+Some theorems:
+
+* Suppose :math:`K\subset Y\subset X`, then :math:`K` is *compact relative to* :math:`X` if and only if :math:`K` is *compact relative to* :math:`Y`.
+* Compact subsets of metric spaces are closed.
+* Compact subsets of compact sets are compact.
+* If :math:`F` is closed and :math:`K` is compact, then :math:`F\cap K` is compact.
+
+References
+----------
+.. [1] Rudin, W. The Principles of Mathematical Analysis. (McGraw-Hill Publishing Company, 1976).
+.. [2] Wikipedia.
 

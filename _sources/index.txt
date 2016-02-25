@@ -6,11 +6,11 @@
 Welcome to MathWiki
 ====================================
 
-When I was working on my math homeworks at UW-Madison, I got tired of scrolling the textbook back and forth to check the definitions or equations -- how inconvenient!
+When I was working on my math homeworks at UW-Madison, I got tired of scrolling the textbooks back and forth to check the definitions or equations -- how inconvenient!
 Then I thought that I need a personal wiki on mathematics, and I built this website.
 
 **Why do I need a personal wiki on mathematics?**
-There are `Wikipeida <https://www.wikipedia.org>`_ and `Wolfram MathWorld <http://mathworld.wolfram.com>`_ that I used a lot, but they are not about the textbooks that I used, also, they are not editable to me, and I need a personal wiki system to *organize* and *review* what I have learnt in my class.
+There are `Wikipedia <https://www.wikipedia.org>`_ and `Wolfram MathWorld <http://mathworld.wolfram.com>`_ that I use a lot, but they are not about the textbooks that I used, also, they are not editable to me, and I need a personal wiki system to *organize*, *review*, and *search* what I have learnt in class.
 
 **MathWiki** is the wiki that helps me learning mathematics.
 The content is mainly abstracted from the textbooks that I used for my class and from the Internet resources, with my own editting and notation for the convenience of understanding.
@@ -23,7 +23,7 @@ I use it as a wiki system since it has features:
 
 * Auto generated links for each headings.
 * `MathJax <https://www.mathjax.org/>`_ support.
-* HTML generation with nice embeded themes.
+* HTML generation with nice builtin themes.
 * Editting with `reStructuredText <http://docutils.sourceforge.net/rst.html>`_ (a markup language that is lightweighted).
 
 **You can start using this wiki by the "quick search" in the sidebar or by the TOC below.**

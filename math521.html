@@ -42,14 +42,187 @@
             
   <div class="section" id="analysis-i-math-521">
 <h1>Analysis I (MATH 521)<a class="headerlink" href="#analysis-i-math-521" title="Permalink to this headline">¶</a></h1>
+<p>Last update: 2016-02-25</p>
+<div class="section" id="ordered-set">
+<h2>Ordered set<a class="headerlink" href="#ordered-set" title="Permalink to this headline">¶</a></h2>
+<p>Let <span class="math">\(S\)</span> be a set. An <strong>order</strong> on <span class="math">\(S\)</span> is a relation, denoted by <span class="math">\(&lt;\)</span>, with the following two properties:</p>
+<ul>
+<li><p class="first">If <span class="math">\(x\in S\)</span> and <span class="math">\(y\in S\)</span> then one and only one of the statements below is true:</p>
+<div class="math">
+\[\begin{split}x&lt;y, \hspace{1em}x=y, \hspace{1em}y&lt;x\end{split}\]</div>
+</li>
+<li><p class="first">If <span class="math">\(x,y,z\in S\)</span>, if <span class="math">\(x&lt;y\)</span> and <span class="math">\(y&lt;z\)</span>, then <span class="math">\(x&lt;z\)</span>.</p>
+</li>
+</ul>
+<p>An <strong>ordered set</strong> is a set <span class="math">\(S\)</span> in which an order is defined.</p>
+</div>
+<div class="section" id="bounds">
+<h2>Bounds<a class="headerlink" href="#bounds" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="upper-bound">
+<h3>Upper bound<a class="headerlink" href="#upper-bound" title="Permalink to this headline">¶</a></h3>
+<p>Suppose <span class="math">\(S\)</span> is an <a class="reference internal" href="#ordered-set">ordered set</a>, and <span class="math">\(E\subset S\)</span>. If <span class="math">\(\exists \beta \in S\)</span> such that  <span class="math">\(x\le\beta~\forall x\in E\)</span>, we say that <span class="math">\(E\)</span> is <strong>bounded above</strong>, and call <span class="math">\(\beta\)</span> an <strong>upper bound</strong> of <span class="math">\(E\)</span>.</p>
+</div>
+<div class="section" id="lower-bound">
+<h3>Lower bound<a class="headerlink" href="#lower-bound" title="Permalink to this headline">¶</a></h3>
+<p>Suppose <span class="math">\(S\)</span> is an <a class="reference internal" href="#ordered-set">ordered set</a>, and <span class="math">\(E\subset S\)</span>. If <span class="math">\(\exists \beta \in S\)</span> such that  <span class="math">\(x\ge\beta~\forall x\in E\)</span>, we say that <span class="math">\(E\)</span> is <strong>bounded below</strong>, and call <span class="math">\(\beta\)</span> an <strong>lower bound</strong> of <span class="math">\(E\)</span>.</p>
+</div>
 <div class="section" id="supremum">
-<h2>Supremum<a class="headerlink" href="#supremum" title="Permalink to this headline">¶</a></h2>
+<h3>Supremum<a class="headerlink" href="#supremum" title="Permalink to this headline">¶</a></h3>
+<p>Suppose <span class="math">\(S\)</span> is an <a class="reference internal" href="#ordered-set">ordered set</a>, <span class="math">\(E\subset S\)</span> is bounded above.
+Suppose <span class="math">\(\exists \alpha\in S\)</span> with the following two properties:</p>
+<ul class="simple">
+<li><span class="math">\(\alpha\)</span> is an <cite>upper bound</cite> of <span class="math">\(E\)</span>.</li>
+<li>If <span class="math">\(\gamma &lt; \alpha\)</span>, then <span class="math">\(\gamma\)</span> is not an <cite>upper bound</cite> of <span class="math">\(E\)</span>.</li>
+</ul>
+<p>Then <span class="math">\(\alpha\)</span> is called the <strong>least upper bound</strong> or <strong>supremum</strong> of <span class="math">\(E\)</span>, and is denoted as <span class="math">\(\alpha = \sup E\)</span>.</p>
 </div>
 <div class="section" id="infimum">
-<h2>Infimum<a class="headerlink" href="#infimum" title="Permalink to this headline">¶</a></h2>
+<h3>Infimum<a class="headerlink" href="#infimum" title="Permalink to this headline">¶</a></h3>
+<p>Suppose <span class="math">\(S\)</span> is an <a class="reference internal" href="#ordered-set">ordered set</a>, <span class="math">\(E\subset S\)</span> is bounded above.
+Suppose <span class="math">\(\exists \alpha\in S\)</span> with the following two properties:</p>
+<ul class="simple">
+<li><span class="math">\(\alpha\)</span> is an <cite>lower bound</cite> of <span class="math">\(E\)</span>.</li>
+<li>If <span class="math">\(\gamma &gt; \alpha\)</span>, then <span class="math">\(\gamma\)</span> is not an <cite>lower bound</cite> of <span class="math">\(E\)</span>.</li>
+</ul>
+<p>Then <span class="math">\(\alpha\)</span> is called the <strong>greatest lower bound</strong> or <strong>infimum</strong> of <span class="math">\(E\)</span>, and is denoted as <span class="math">\(\alpha = \inf E\)</span>.</p>
+</div>
+<div class="section" id="least-upper-bound-property">
+<h3>Least-upper-bound property<a class="headerlink" href="#least-upper-bound-property" title="Permalink to this headline">¶</a></h3>
+<p>An ordered set <span class="math">\(S\)</span> is said to have the least-upper-bound (LUB) property if the following is true:
+If <span class="math">\(E\subset S\)</span>, <span class="math">\(E\ne \emptyset\)</span>, and <span class="math">\(E\)</span> is bounded above, then <span class="math">\(\exists \sup E \in S\)</span>.</p>
+<p>Every <a class="reference internal" href="#ordered-set">ordered set</a> with the LUB property also has the GLB property.</p>
+</div>
+<div class="section" id="greatest-lower-bound-property">
+<h3>Greatest-lower-bound property<a class="headerlink" href="#greatest-lower-bound-property" title="Permalink to this headline">¶</a></h3>
+<p>An ordered set <span class="math">\(S\)</span> is said to have the greast-lower-bound (GLB) property if the following is true:
+If <span class="math">\(E\subset S\)</span>, <span class="math">\(E\ne \emptyset\)</span>, and <span class="math">\(E\)</span> is bounded below, then <span class="math">\(\exists \inf E \in S\)</span>.</p>
+<p>Every <a class="reference internal" href="#ordered-set">ordered set</a> with the GLB property also has the LUB property.</p>
+</div>
 </div>
 <div class="section" id="metric-space">
-<h2>Metric Space<a class="headerlink" href="#metric-space" title="Permalink to this headline">¶</a></h2>
+<h2>Metric space<a class="headerlink" href="#metric-space" title="Permalink to this headline">¶</a></h2>
+<p>A set <span class="math">\(X\)</span>, whose elements we shall call <strong>points</strong>, is said to be a <strong>metric space</strong> if with any two points <span class="math">\(p\)</span> and <span class="math">\(q\)</span> of <span class="math">\(X\)</span> there is associated a real number <span class="math">\(d(p,1)\)</span>, called the <strong>distance</strong> from <span class="math">\(p\)</span> to <span class="math">\(q\)</span>, such that</p>
+<ul>
+<li><div class="first math">
+\[\begin{split}d(p,q) \begin{cases}
+&gt; 0, \text{ if }p\ne q, \\
+= 0, \text{ if }p = q. \\
+\end{cases}\end{split}\]</div>
+</li>
+<li><p class="first"><span class="math">\(d(p,q) = d(q,p)\)</span>.</p>
+</li>
+<li><p class="first"><span class="math">\(d(p,q) \le d(p,r) + d(r,q) ~\forall r\in X\)</span>.</p>
+</li>
+</ul>
+<div class="section" id="neighborhood">
+<h3>Neighborhood<a class="headerlink" href="#neighborhood" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math">\(X\)</span> be a <a class="reference internal" href="#metric-space">metric space</a>, <span class="math">\(p\)</span> is a point in <span class="math">\(X\)</span>.</p>
+<p>A <strong>neighborhood</strong> of <span class="math">\(p\)</span> is a set <span class="math">\(N_r(p) = \{q\in X | d(p,q) &lt; r\}\)</span>, for some radius <span class="math">\(r&gt;0\)</span>.</p>
+<p>Every neighborhood is an <a class="reference internal" href="#open-set">open set</a>.</p>
+</div>
+<div class="section" id="limit-point">
+<h3>Limit point<a class="headerlink" href="#limit-point" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math">\(X\)</span> be a <a class="reference internal" href="#metric-space">metric space</a>, <span class="math">\(E\subset X\)</span>, a point <span class="math">\(p\in X\)</span>.</p>
+<p>If every <a class="reference internal" href="#neighborhood">neighborhood</a> of <span class="math">\(p\)</span> contains <span class="math">\(q\ne p\)</span> such that <span class="math">\(q\in E\)</span>, then <span class="math">\(p\)</span> is a <strong>limit point</strong> of <span class="math">\(E\)</span>.</p>
+<p>In other words, we say <span class="math">\(p\in E\)</span> is a <strong>limit point</strong> if: <span class="math">\(\forall N_r(p), \exists q\ne p\)</span> such that <span class="math">\(q\in E\)</span>.</p>
+</div>
+<div class="section" id="isolated-point">
+<h3>Isolated point<a class="headerlink" href="#isolated-point" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math">\(X\)</span> be a <a class="reference internal" href="#metric-space">metric space</a>, <span class="math">\(E\subset X\)</span>, a point <span class="math">\(p\in X\)</span>.</p>
+<p>If <span class="math">\(p\in E\)</span> is not a <a class="reference internal" href="#limit-point">limit point</a> of <span class="math">\(E\)</span>, then <span class="math">\(p\)</span> is called an <strong>isolated point</strong> of <span class="math">\(E\)</span>.</p>
+</div>
+<div class="section" id="interior-point">
+<h3>Interior point<a class="headerlink" href="#interior-point" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math">\(X\)</span> be a <a class="reference internal" href="#metric-space">metric space</a>, <span class="math">\(E\subset X\)</span>, a point <span class="math">\(p\in X\)</span>.</p>
+<p>If <span class="math">\(\exists N_r(p)\)</span> such that <span class="math">\(N_r(p) \subset E\)</span>, then <span class="math">\(p\)</span> is an <strong>interior point</strong> of <span class="math">\(E\)</span>.</p>
+</div>
+<div class="section" id="closed-set">
+<h3>Closed set<a class="headerlink" href="#closed-set" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math">\(X\)</span> be a <a class="reference internal" href="#metric-space">metric space</a>, <span class="math">\(E\subset X\)</span>.</p>
+<p>We say <span class="math">\(E\)</span> is a <strong>closed set</strong> if every <a class="reference internal" href="#limit-point">limit point</a> of <span class="math">\(E\)</span> is a point of <span class="math">\(E\)</span>.</p>
+<p>In other words, we say <span class="math">\(E\)</span> is a <strong>closed set</strong> if: if <span class="math">\(p\)</span> is a limit point of <span class="math">\(E\)</span>, then <span class="math">\(p\in E\)</span>.</p>
+</div>
+<div class="section" id="open-set">
+<h3>Open set<a class="headerlink" href="#open-set" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math">\(X\)</span> be a <a class="reference internal" href="#metric-space">metric space</a>, <span class="math">\(E\subset X\)</span>.</p>
+<p><span class="math">\(E\)</span> is an <strong>open set</strong> if every point of <span class="math">\(E\)</span> is an <a class="reference internal" href="#interior-point">interior point</a> of <span class="math">\(E\)</span>.</p>
+</div>
+<div class="section" id="complement-set">
+<h3>Complement set<a class="headerlink" href="#complement-set" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math">\(X\)</span> be a <a class="reference internal" href="#metric-space">metric space</a>, <span class="math">\(E\subset X\)</span>.</p>
+<p>The <strong>complement set</strong> of <span class="math">\(E\)</span> (denoted by <span class="math">\(E^c = X-E\)</span>) is the set of all points <span class="math">\(p\in X\)</span> such that <span class="math">\(p\notin E\)</span>.</p>
+</div>
+<div class="section" id="perfect-set">
+<h3>Perfect set<a class="headerlink" href="#perfect-set" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math">\(X\)</span> be a <a class="reference internal" href="#metric-space">metric space</a>, <span class="math">\(E\subset X\)</span>.</p>
+<p>If <span class="math">\(E\)</span> is a <a class="reference internal" href="#closed-set">closed set</a> (every <a class="reference internal" href="#limit-point">limit point</a> of <span class="math">\(E\)</span> is a point of <span class="math">\(E\)</span>) and if every point of <span class="math">\(E\)</span> is a <a class="reference internal" href="#limit-point">limit point</a> of <span class="math">\(E\)</span>.</p>
+</div>
+<div class="section" id="bounded-set">
+<h3>Bounded set<a class="headerlink" href="#bounded-set" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math">\(X\)</span> be a <a class="reference internal" href="#metric-space">metric space</a>, <span class="math">\(E\subset X\)</span>.</p>
+<p><span class="math">\(E\)</span> is a <strong>bounded set</strong> if <span class="math">\(\exists M\in\mathbb{R}\)</span> and a point <span class="math">\(q\in X\)</span> such that <span class="math">\(d(p,q)&lt;M~\forall p\in E\)</span>.</p>
+</div>
+<div class="section" id="dense">
+<h3>Dense<a class="headerlink" href="#dense" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math">\(X\)</span> be a <a class="reference internal" href="#metric-space">metric space</a>, <span class="math">\(E\subset X\)</span>.</p>
+<p><span class="math">\(E\)</span> is <strong>dense</strong> in <span class="math">\(X\)</span> if every point of <span class="math">\(X\)</span> is a <a class="reference internal" href="#limit-point">limit point</a> of <span class="math">\(E\)</span>, or a point of <span class="math">\(E\)</span> (or both).</p>
+</div>
+<div class="section" id="closure">
+<h3>Closure<a class="headerlink" href="#closure" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math">\(X\)</span> be a <a class="reference internal" href="#metric-space">metric space</a>, <span class="math">\(E\subset X\)</span>.</p>
+<p>Denote the set of all <a class="reference internal" href="#limit-point">limit point</a> s of <span class="math">\(E\subset X\)</span>, then the <strong>closure</strong> of <span class="math">\(E\)</span> is the set <span class="math">\(\bar{E} = E\cup E'\)</span>.</p>
+<p>Some theorems:</p>
+<ul class="simple">
+<li><span class="math">\(\bar{E}\)</span> is a <a class="reference internal" href="#closed-set">closed set</a>.</li>
+<li><span class="math">\(E= \bar{E}\)</span> if and only if <span class="math">\(E\)</span> is a <a class="reference internal" href="#closed-set">closed set</a>.</li>
+<li><span class="math">\(\bar{E} \subset F\)</span> for every <a class="reference internal" href="#closed-set">closed set</a> <span class="math">\(F\subset X\)</span> such that <span class="math">\(E \subset F\)</span>.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="de-morgan-s-laws">
+<h2>De Morgan&#8217;s laws<a class="headerlink" href="#de-morgan-s-laws" title="Permalink to this headline">¶</a></h2>
+<p>Let <span class="math">\(\{E_{\alpha}\}\)</span> be a collection of sets <span class="math">\(E_{\alpha}\)</span>, then</p>
+<div class="math">
+\[\begin{split}\left(\cup_{\alpha} E_{\alpha}\right)^c = \cap_{\alpha}(E_{\alpha}^c), \\
+\left(\cap_{\alpha} E_{\alpha}\right)^c = \cup_{\alpha}(E_{\alpha}^c).\end{split}\]</div>
+</div>
+<div class="section" id="compact-set">
+<h2>Compact set<a class="headerlink" href="#compact-set" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="open-cover">
+<h3>Open cover<a class="headerlink" href="#open-cover" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math">\(X\)</span> be a <a class="reference internal" href="#metric-space">metric space</a>, <span class="math">\(E\subset X\)</span>.</p>
+<p>An <strong>open cover</strong> of <span class="math">\(E\subset X\)</span> is the collection <span class="math">\(\{G_{\alpha}\}\)</span> of open subsets of <span class="math">\(X\)</span> such that <span class="math">\(E\subset \cup_{\alpha} G_{\alpha}\)</span>.</p>
+</div>
+<div class="section" id="compact">
+<h3>Compact<a class="headerlink" href="#compact" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math">\(X\)</span> be a <a class="reference internal" href="#metric-space">metric space</a>, <span class="math">\(K\subset X\)</span>.</p>
+<p><span class="math">\(K\)</span> is said to be <strong>compact</strong> if every <a class="reference internal" href="#open-cover">open cover</a> of <span class="math">\(K\)</span> contains a finite subcover.</p>
+<p>In other words, <span class="math">\(\exists \alpha_1, \dots, \alpha_n\)</span> (finitely many indices) such that</p>
+<div class="math">
+\[K \subset G_{\alpha_1} \cdots \cup G_{\alpha_n}\]</div>
+<p>Some theorems:</p>
+<ul class="simple">
+<li>Suppose <span class="math">\(K\subset Y\subset X\)</span>, then <span class="math">\(K\)</span> is <em>compact relative to</em> <span class="math">\(X\)</span> if and only if <span class="math">\(K\)</span> is <em>compact relative to</em> <span class="math">\(Y\)</span>.</li>
+<li>Compact subsets of metric spaces are closed.</li>
+<li>Compact subsets of compact sets are compact.</li>
+<li>If <span class="math">\(F\)</span> is closed and <span class="math">\(K\)</span> is compact, then <span class="math">\(F\cap K\)</span> is compact.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<table class="docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>Rudin, W. The Principles of Mathematical Analysis. (McGraw-Hill Publishing Company, 1976).</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td>Wikipedia.</td></tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -65,9 +238,37 @@
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Analysis I (MATH 521)</a><ul>
+<li><a class="reference internal" href="#ordered-set">Ordered set</a></li>
+<li><a class="reference internal" href="#bounds">Bounds</a><ul>
+<li><a class="reference internal" href="#upper-bound">Upper bound</a></li>
+<li><a class="reference internal" href="#lower-bound">Lower bound</a></li>
 <li><a class="reference internal" href="#supremum">Supremum</a></li>
 <li><a class="reference internal" href="#infimum">Infimum</a></li>
-<li><a class="reference internal" href="#metric-space">Metric Space</a></li>
+<li><a class="reference internal" href="#least-upper-bound-property">Least-upper-bound property</a></li>
+<li><a class="reference internal" href="#greatest-lower-bound-property">Greatest-lower-bound property</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#metric-space">Metric space</a><ul>
+<li><a class="reference internal" href="#neighborhood">Neighborhood</a></li>
+<li><a class="reference internal" href="#limit-point">Limit point</a></li>
+<li><a class="reference internal" href="#isolated-point">Isolated point</a></li>
+<li><a class="reference internal" href="#interior-point">Interior point</a></li>
+<li><a class="reference internal" href="#closed-set">Closed set</a></li>
+<li><a class="reference internal" href="#open-set">Open set</a></li>
+<li><a class="reference internal" href="#complement-set">Complement set</a></li>
+<li><a class="reference internal" href="#perfect-set">Perfect set</a></li>
+<li><a class="reference internal" href="#bounded-set">Bounded set</a></li>
+<li><a class="reference internal" href="#dense">Dense</a></li>
+<li><a class="reference internal" href="#closure">Closure</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#de-morgan-s-laws">De Morgan&#8217;s laws</a></li>
+<li><a class="reference internal" href="#compact-set">Compact set</a><ul>
+<li><a class="reference internal" href="#open-cover">Open cover</a></li>
+<li><a class="reference internal" href="#compact">Compact</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#references">References</a></li>
 </ul>
 </li>
 </ul>

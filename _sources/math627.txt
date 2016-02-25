@@ -140,7 +140,7 @@ Define the :math:`n`-th partial sum of a series of complex numnbers :math:`\sum_
 .. math::
     \sigma_N = \frac{1}{N}\sum_{k=0}^{N-1}s_k.
 
-If :math:`\sigma_N` converges to a limit :math:`\sigma` as :math:`N\rightarrow \infty`, we say that the series `\sum_{k=0}^{\infty}c_k` is **Cesaro summable** to :math:`\sigma`.
+If :math:`\sigma_N` converges to a limit :math:`\sigma` as :math:`N\rightarrow \infty`, we say that the series :math:`\sum_{k=0}^{\infty}c_k` is **Cesaro summable** to :math:`\sigma`.
 
 The :math:`N`-th **Cesaro mean of the Fourier series** is defined as
 
@@ -167,6 +167,36 @@ The **Abel mean of Fourier series** is
     A_r(f)(x) = \sum_{n=-\infty}^{\infty}r^{|n|} a_n e^{in x} = (f*P_r)(x),
 
 where :math:`P_r(x)` is the `Poisson kernel`_.
+
+Norm
+----
+
+On a :math:`L^p` space, the :math:`p`-norm of a vector :math:`\mathbf{x} = (x_1, x_2, \dots, x_n)` is given by
+
+.. math::
+    \Vert \mathbf{x} \Vert_p = \left(\sum_{k=1}^{n}|x_k|^p\right)^{1/p},
+
+where :math:`1\le p \le \infty`.
+
+Specifically, when :math:`p=1`, we have
+
+.. math::
+    \Vert \mathbf{x} \Vert_1 = \sum_{k=1}^{n}|x_k|;
+
+when :math:`p=2`, we have the **Euclidean norm**
+
+.. math::
+    \Vert \mathbf{x} \Vert_2 = \Vert \mathbf{x} \Vert = \sqrt{\sum_{k=1}^{n}x_k^2};
+
+when :math:`p\rightarrow\infty`, we have
+
+.. math::
+    \Vert \mathbf{x} \Vert_{\infty} = \max_{i} |x_i|.
+
+With :math:`p_1 < p_2`, we have
+
+.. math::
+    \Vert \mathbf{x} \Vert_{p_2} \le \Vert \mathbf{x} \Vert_{p_1}.
 
 
 Inequalities
@@ -202,7 +232,7 @@ For all :math:`\mathbf{x},\mathbf{y}\in S`, we have
 References
 ----------
 .. [1] Stein, E. M. & Shakarchi, R. Fourier Analysis: An Introduction. (World Book Publishing Company, 2011).
-.. [2] Wikipedia
+.. [2] Wikipedia.
 
 
 
