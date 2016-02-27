@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Notes &mdash; MathWiki</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.11',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+    <link rel="top" title="MathWiki" href="index.html" />
+    <link rel="prev" title="Fourier Analysis (MATH 627)" href="math627.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="notes">
+<h1>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h1>
+<p>Last update: 2016-02-26</p>
+<div class="section" id="the-best-practice-in-writing-mathematical-proofs">
+<h2>The Best Practice in Writing Mathematical Proofs<a class="headerlink" href="#the-best-practice-in-writing-mathematical-proofs" title="Permalink to this headline">¶</a></h2>
+<p>In this section, I am tring to organize the &#8220;best practice&#8221; in writing mathematical proofs.
+(Sadly, I got a 60/100 in the first mid-term exam of MATH 521, Spring 2016.
+It is not that I did not know how to prove those theorems, it is just that I am not good at writing mathematical proofs in a time-limited environment and failed to organize my proofs well and suffered &#8220;time panic&#8221; in the exam.
+So I had the idea of writing this section.)
+The motivation is that I want my proofs to be clear-structured and easy to follow so that I can prove the theorems smoothly and get good scores in the exams.</p>
+<p>We will prove several theorems to get the idea.</p>
+<div class="section" id="proof-is-a-closed-set">
+<h3>Proof (<span class="math">\(\bar{E}\)</span> is a <a class="reference internal" href="math521.html#closed-set"><span>closed set</span></a>.):<a class="headerlink" href="#proof-is-a-closed-set" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">Step</span> <span class="pre">1.</span> <span class="pre">Explain</span> <span class="pre">the</span> <span class="pre">theorem</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">logical</span> <span class="pre">statement</span> <span class="pre">as</span> <span class="pre">&quot;if</span> <span class="pre">{conditions},</span> <span class="pre">then</span> <span class="pre">{results}.&quot;</span></code></p>
+<p><span class="math">\(\bar{E}\)</span> is a <a class="reference internal" href="math521.html#closed-set"><span>closed set</span></a>. <span class="math">\(\iff\)</span> <span class="math">\(\bar{E}\)</span> contains all its <a class="reference internal" href="math521.html#limit-point"><span>limit points</span></a>. <span class="math">\(\iff\)</span> If <span class="math">\(p\)</span> is a <a class="reference internal" href="math521.html#limit-point"><span>limit point</span></a> of <span class="math">\(\bar{E}\)</span>, then <span class="math">\(p \in \bar{E}\)</span>.</p>
+<p><strong>Remark</strong>: I think that a main kind of failure of proving theorems is the confusion with {conditions} and {results} &#8211; we need to be clear about <em>what we can use</em> and <em>what we want to get</em> all the time, so we should first separate the theorem as those two parts, and explain them in the language of logic so that we can manipulate them.
+Also, we may use the definitions of the keywords in the theorem, so make sure to be familiar with them.</p>
+<p><code class="docutils literal"><span class="pre">Step</span> <span class="pre">2.</span> <span class="pre">Explain</span> <span class="pre">the</span> <span class="pre">idea</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">proof:</span> <span class="pre">suppose</span> <span class="pre">the</span> <span class="pre">{conditions}</span> <span class="pre">are</span> <span class="pre">true,</span> <span class="pre">show</span> <span class="pre">that</span> <span class="pre">the</span> <span class="pre">{results}</span> <span class="pre">are</span> <span class="pre">true.</span></code></p>
+<p>Suppose <span class="math">\(p\)</span> is a <a class="reference internal" href="math521.html#limit-point"><span>limit point</span></a> of <span class="math">\(\bar{E}\)</span>, we will show that <span class="math">\(p \in \bar{E}\)</span>, i.e., <span class="math">\(p \in E\)</span> or <span class="math">\(p\in E'\)</span>.</p>
+<p><code class="docutils literal"><span class="pre">Step</span> <span class="pre">3.</span> <span class="pre">Execute</span> <span class="pre">the</span> <span class="pre">idea</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">proof:</span> <span class="pre">consider</span> <span class="pre">the</span> <span class="pre">{conditions}</span> <span class="pre">as</span> <span class="pre">given</span> <span class="pre">facts,</span> <span class="pre">and</span> <span class="pre">get</span> <span class="pre">the</span> <span class="pre">{results}</span> <span class="pre">from</span> <span class="pre">these</span> <span class="pre">given</span> <span class="pre">facts.</span></code></p>
+<p>Since <span class="math">\(p\)</span> is a <a class="reference internal" href="math521.html#limit-point"><span>limit point</span></a> of <span class="math">\(\bar{E}\)</span>, by definition, we have</p>
+<div class="math" id="equation-def-limit-point">
+<span class="eqno">(1)</span>\[\begin{split}\forall r&gt;0, \exists q \in \bar{E}, \text{ such that } d(p,q)&lt;r.\end{split}\]</div>
+<p>Since <span class="math">\(q\in \bar{E}\)</span>, then <span class="math">\(q \in E\)</span> or <span class="math">\(q\in E'\)</span>.</p>
+<ul class="simple">
+<li>If <span class="math">\(q\in E\)</span>, then, by modifiying <a href="#equation-def-limit-point">(1)</a>, we have</li>
+</ul>
+<div class="math">
+\[\begin{split}\forall r&gt;0, \exists q \in E, \text{ such that } d(p,q)&lt;r,\end{split}\]</div>
+<p>which implies that <span class="math">\(p\)</span> is a limit point of <span class="math">\(E\)</span>, i.e., <span class="math">\(p\in E'\)</span>.</p>
+<ul class="simple">
+<li>If <span class="math">\(q\in E'\)</span>, then, by modifiying <a href="#equation-def-limit-point">(1)</a> we have</li>
+</ul>
+<div class="math">
+\[\begin{split}\forall r'&gt;0, \exists q \in E', \text{ such that } d(p,q)&lt;r',\end{split}\]</div>
+<p><strong>Remark</strong>: <span class="math">\(p\)</span> is infinitely close to a point <span class="math">\(q\)</span> which is in <span class="math">\(E'\)</span>.</p>
+<p>Also, <span class="math">\(q\in E'\)</span> means that <span class="math">\(q\)</span> is a limit point of <span class="math">\(E\)</span>, i.e.,</p>
+<div class="math">
+\[\begin{split}\forall r_1&gt;0, \exists q_1 \in E, \text{ such that } d(q,q_1)&lt;r_1,\end{split}\]</div>
+<p><strong>Remark</strong>: <span class="math">\(q\)</span> is infinitely close to a point <span class="math">\(q_1\)</span> which is in <span class="math">\(E\)</span>.</p>
+<p>By the property of a <a class="reference internal" href="math521.html#metric-space"><span>metric space</span></a>, we have</p>
+<div class="math">
+\[\begin{split}d(p,q_1) \le d(p,q) + d(q,q_1) &lt; r'+r_2.\end{split}\]</div>
+<p>Denote <span class="math">\(r = r' + r_2 &gt; 0\)</span>, then we have</p>
+<div class="math">
+\[\begin{split}\forall r&gt;0, \exists q_1 \in E, \text{ such that } d(p,q_1)&lt;r,\end{split}\]</div>
+<p>which implies that <span class="math">\(p\)</span> is a limit point of <span class="math">\(E\)</span>, i.e., <span class="math">\(p\in E'\)</span>.</p>
+<p><strong>Remark</strong>:
+Since that
+&#8220;<span class="math">\(p\)</span> is infinitely close to a point <span class="math">\(q \in E'\)</span>&#8221;
+and that
+&#8220;<span class="math">\(q\)</span> is infinitely close to a point <span class="math">\(q_1 \in E\)</span>,&#8221;
+we get
+<span class="math">\(p\)</span> is infinitely close to a point <span class="math">\(q_1 \in E\)</span>.</p>
+<p>Q.E.D.</p>
+</div>
+<div class="section" id="proof-every-neighborhood-is-an-open-set">
+<h3>Proof (Every <a class="reference internal" href="math521.html#neighborhood"><span>neighborhood</span></a> is an <a class="reference internal" href="math521.html#open-set"><span>open set</span></a>.):<a class="headerlink" href="#proof-every-neighborhood-is-an-open-set" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">Step</span> <span class="pre">1.</span> <span class="pre">If</span> <span class="pre">{conditions},</span> <span class="pre">then</span> <span class="pre">{results}.</span></code></p>
+<p>Every <a class="reference internal" href="math521.html#neighborhood"><span>neighborhood</span></a> is an <a class="reference internal" href="math521.html#open-set"><span>open set</span></a>.
+<span class="math">\(\iff\)</span>
+Every point in the <a class="reference internal" href="math521.html#neighborhood"><span>neighborhood</span></a> is an <a class="reference internal" href="math521.html#interior-point"><span>interior point</span></a> of this neighborhood.
+<span class="math">\(\iff\)</span>
+If a point <span class="math">\(q\)</span> is in an arbitrary <a class="reference internal" href="math521.html#neighborhood"><span>neighborhood</span></a> <span class="math">\(N_r(p)\)</span>, then <span class="math">\(q\)</span> is an <a class="reference internal" href="math521.html#interior-point"><span>interior point</span></a> of <span class="math">\(N_r(p)\)</span>.</p>
+<p><code class="docutils literal"><span class="pre">Step</span> <span class="pre">2.</span> <span class="pre">Explain</span> <span class="pre">the</span> <span class="pre">idea:</span> <span class="pre">suppose</span> <span class="pre">the</span> <span class="pre">{conditions}</span> <span class="pre">are</span> <span class="pre">true,</span> <span class="pre">show</span> <span class="pre">that</span> <span class="pre">the</span> <span class="pre">{results}</span> <span class="pre">are</span> <span class="pre">true.</span></code></p>
+<p>Suppose a point <span class="math">\(q\in N_r(p)\)</span>, <span class="math">\(N_r(p)\)</span> is an arbitrary <a class="reference internal" href="math521.html#neighborhood"><span>neighborhood</span></a> with center <span class="math">\(p\)</span> and radius <span class="math">\(r\)</span>, we will show that <span class="math">\(q\)</span> is an <a class="reference internal" href="math521.html#interior-point"><span>interior point</span></a> of <span class="math">\(N_r(p)\)</span>, meanning that</p>
+<div class="math">
+\[\begin{split}&amp; \exists r_q&gt;0, \text{ such that } N_{r_q}(q) \subset N_r(p). \\
+\iff &amp;\exists r_q&gt;0, \text{ such that }  \forall y\in N_{r_q}(q), y\in N_r(p). \\
+\iff &amp;\exists r_q&gt;0, \text{ such that }  \forall y, \text{ if } d(q,y)&lt; r_q, \text{ then } d(p,y) &lt; r.\end{split}\]</div>
+<p><code class="docutils literal"><span class="pre">Step</span> <span class="pre">3.</span> <span class="pre">Consider</span> <span class="pre">the</span> <span class="pre">{conditions}</span> <span class="pre">as</span> <span class="pre">given</span> <span class="pre">facts,</span> <span class="pre">and</span> <span class="pre">get</span> <span class="pre">the</span> <span class="pre">{results}</span> <span class="pre">from</span> <span class="pre">these</span> <span class="pre">given</span> <span class="pre">facts.</span></code></p>
+<p>Since <span class="math">\(q\in N_r(p)\)</span>, we have <span class="math">\(d(p,q)&lt;r\)</span>.
+<span class="math">\(\forall y\)</span>, if <span class="math">\(d(q,y) &lt; r_q\)</span>, then by the property of a <a class="reference internal" href="math521.html#metric-space"><span>metric space</span></a>, we have <span class="math">\(d(p,y) \le d(p,q) + d(q,y) &lt; d(p,q) + r_q\)</span>.
+We can take <span class="math">\(r_q&gt;0\)</span> such that <span class="math">\(r_q &lt; r - d(p,q)\)</span>, then <span class="math">\(d(p,y) &lt; r\)</span>.
+Hence such <span class="math">\(r_q\)</span> exists.</p>
+<p>Q.E.D.</p>
+<p><strong>Remark</strong>:
+To prove this theorem, we need to be familiar with the definitions of <a class="reference internal" href="math521.html#neighborhood"><span>neighborhood</span></a>, <a class="reference internal" href="math521.html#open-set"><span>open set</span></a>, and  <a class="reference internal" href="math521.html#interior-point"><span>interior point</span></a>.
+Notice that in Step 1, we were still using the definitions, while in Step 2,
+the statement had been totally transformed into logical forms and mathematical expressions, which we can manipulate with only logic and math.
+After Step 2, we don&#8217;t need the knowledge of the definitions anymore!
+Thus, in Step 3, we manipulated the transformed logical forms and mathematical expressions with logic and math, showing that they do hold.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Notes</a><ul>
+<li><a class="reference internal" href="#the-best-practice-in-writing-mathematical-proofs">The Best Practice in Writing Mathematical Proofs</a><ul>
+<li><a class="reference internal" href="#proof-is-a-closed-set">Proof (<span class="math">\(\bar{E}\)</span> is a <code class="docutils literal"><span class="pre">closed</span> <span class="pre">set</span></code>.):</a></li>
+<li><a class="reference internal" href="#proof-every-neighborhood-is-an-open-set">Proof (Every <code class="docutils literal"><span class="pre">neighborhood</span></code> is an <code class="docutils literal"><span class="pre">open</span> <span class="pre">set</span></code>.):</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="math627.html" title="previous chapter">Fourier Analysis (MATH 627)</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Feng Zhu.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

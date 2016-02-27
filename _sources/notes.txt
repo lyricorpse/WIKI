@@ -1,0 +1,117 @@
+Notes
+=====
+Last update: 2016-02-26
+
+The Best Practice in Writing Mathematical Proofs
+------------------------------------------------
+In this section, I am tring to organize the "best practice" in writing mathematical proofs.
+(Sadly, I got a 60/100 in the first mid-term exam of MATH 521, Spring 2016.
+It is not that I did not know how to prove those theorems, it is just that I am not good at writing mathematical proofs in a time-limited environment and failed to organize my proofs well and suffered "time panic" in the exam.
+So I had the idea of writing this section.)
+The motivation is that I want my proofs to be clear-structured and easy to follow so that I can prove the theorems smoothly and get good scores in the exams.
+
+We will prove several theorems to get the idea.
+
+Proof (:math:`\bar{E}` is a :ref:`closed set <closed-set>`.):
+*************************************************************
+
+``Step 1. Explain the theorem as a logical statement as "if {conditions}, then {results}."``
+
+:math:`\bar{E}` is a :ref:`closed set <closed-set>`. :math:`\iff` :math:`\bar{E}` contains all its :ref:`limit points <limit-point>`. :math:`\iff` If :math:`p` is a :ref:`limit point <limit-point>` of :math:`\bar{E}`, then :math:`p \in \bar{E}`.
+
+**Remark**: I think that a main kind of failure of proving theorems is the confusion with {conditions} and {results} -- we need to be clear about *what we can use* and *what we want to get* all the time, so we should first separate the theorem as those two parts, and explain them in the language of logic so that we can manipulate them.
+Also, we may use the definitions of the keywords in the theorem, so make sure to be familiar with them.
+
+
+``Step 2. Explain the idea of the proof: suppose the {conditions} are true, show that the {results} are true.``
+
+Suppose :math:`p` is a :ref:`limit point <limit-point>` of :math:`\bar{E}`, we will show that :math:`p \in \bar{E}`, i.e., :math:`p \in E` or :math:`p\in E'`.
+
+``Step 3. Execute the idea of the proof: consider the {conditions} as given facts, and get the {results} from these given facts.``
+
+Since :math:`p` is a :ref:`limit point <limit-point>` of :math:`\bar{E}`, by definition, we have
+
+.. math::
+    \forall r>0, \exists q \in \bar{E}, \text{ such that } d(p,q)<r.
+    :label: def-limit-point
+
+Since :math:`q\in \bar{E}`, then :math:`q \in E` or :math:`q\in E'`.
+
+* If :math:`q\in E`, then, by modifiying :eq:`def-limit-point`, we have
+
+.. math::
+    \forall r>0, \exists q \in E, \text{ such that } d(p,q)<r,
+
+which implies that :math:`p` is a limit point of :math:`E`, i.e., :math:`p\in E'`.
+
+* If :math:`q\in E'`, then, by modifiying :eq:`def-limit-point` we have
+
+.. math::
+    \forall r'>0, \exists q \in E', \text{ such that } d(p,q)<r',
+
+**Remark**: :math:`p` is infinitely close to a point :math:`q` which is in :math:`E'`.
+
+Also, :math:`q\in E'` means that :math:`q` is a limit point of :math:`E`, i.e.,
+
+.. math::
+    \forall r_1>0, \exists q_1 \in E, \text{ such that } d(q,q_1)<r_1,
+
+**Remark**: :math:`q` is infinitely close to a point :math:`q_1` which is in :math:`E`.
+
+By the property of a :ref:`metric space <metric-space>`, we have
+
+.. math::
+    d(p,q_1) \le d(p,q) + d(q,q_1) < r'+r_2.
+
+Denote :math:`r = r' + r_2 > 0`, then we have
+
+.. math::
+    \forall r>0, \exists q_1 \in E, \text{ such that } d(p,q_1)<r,
+
+which implies that :math:`p` is a limit point of :math:`E`, i.e., :math:`p\in E'`.
+
+**Remark**:
+Since that
+":math:`p` is infinitely close to a point :math:`q \in E'`"
+and that
+":math:`q` is infinitely close to a point :math:`q_1 \in E`,"
+we get
+:math:`p` is infinitely close to a point :math:`q_1 \in E`.
+
+Q.E.D.
+
+Proof (Every :ref:`neighborhood <neighborhood>` is an :ref:`open set <open-set>`.):
+***********************************************************************************
+
+``Step 1. If {conditions}, then {results}.``
+
+Every :ref:`neighborhood <neighborhood>` is an :ref:`open set <open-set>`.
+:math:`\iff`
+Every point in the :ref:`neighborhood <neighborhood>` is an :ref:`interior point <interior-point>` of this neighborhood.
+:math:`\iff`
+If a point :math:`q` is in an arbitrary :ref:`neighborhood <neighborhood>` :math:`N_r(p)`, then :math:`q` is an :ref:`interior point <interior-point>` of :math:`N_r(p)`.
+
+``Step 2. Explain the idea: suppose the {conditions} are true, show that the {results} are true.``
+
+Suppose a point :math:`q\in N_r(p)`, :math:`N_r(p)` is an arbitrary :ref:`neighborhood <neighborhood>` with center :math:`p` and radius :math:`r`, we will show that :math:`q` is an :ref:`interior point <interior-point>` of :math:`N_r(p)`, meanning that
+
+.. math::
+    & \exists r_q>0, \text{ such that } N_{r_q}(q) \subset N_r(p). \\
+    \iff &\exists r_q>0, \text{ such that }  \forall y\in N_{r_q}(q), y\in N_r(p). \\
+    \iff &\exists r_q>0, \text{ such that }  \forall y, \text{ if } d(q,y)< r_q, \text{ then } d(p,y) < r.
+
+``Step 3. Consider the {conditions} as given facts, and get the {results} from these given facts.``
+
+Since :math:`q\in N_r(p)`, we have :math:`d(p,q)<r`.
+:math:`\forall y`, if :math:`d(q,y) < r_q`, then by the property of a :ref:`metric space <metric-space>`, we have :math:`d(p,y) \le d(p,q) + d(q,y) < d(p,q) + r_q`.
+We can take :math:`r_q>0` such that :math:`r_q < r - d(p,q)`, then :math:`d(p,y) < r`.
+Hence such :math:`r_q` exists.
+
+Q.E.D.
+
+**Remark**:
+To prove this theorem, we need to be familiar with the definitions of :ref:`neighborhood <neighborhood>`, :ref:`open set <open-set>`, and  :ref:`interior point <interior-point>`.
+Notice that in Step 1, we were still using the definitions, while in Step 2,
+the statement had been totally transformed into logical forms and mathematical expressions, which we can manipulate with only logic and math.
+After Step 2, we don't need the knowledge of the definitions anymore!
+Thus, in Step 3, we manipulated the transformed logical forms and mathematical expressions with logic and math, showing that they do hold.

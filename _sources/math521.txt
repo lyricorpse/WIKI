@@ -1,6 +1,7 @@
 Analysis I (MATH 521)
 =====================
-Last update: 2016-02-25
+
+Last update: 2016-02-26
 
 Ordered set
 -----------
@@ -66,6 +67,8 @@ If :math:`E\subset S`, :math:`E\ne \emptyset`, and :math:`E` is bounded below, t
 
 Every `ordered set`_ with the GLB property also has the LUB property.
 
+.. _metric-space:
+
 Metric space
 ------------
 
@@ -80,6 +83,7 @@ A set :math:`X`, whose elements we shall call **points**, is said to be a **metr
 * :math:`d(p,q) = d(q,p)`.
 * :math:`d(p,q) \le d(p,r) + d(r,q) ~\forall r\in X`.
 
+.. _neighborhood:
 
 Neighborhood
 ************
@@ -90,6 +94,9 @@ A **neighborhood** of :math:`p` is a set :math:`N_r(p) = \{q\in X | d(p,q) < r\}
 
 Every neighborhood is an `open set`_.
 
+
+.. _limit-point:
+
 Limit point
 ***********
 Let :math:`X` be a `metric space`_, :math:`E\subset X`, a point :math:`p\in X`.
@@ -98,11 +105,16 @@ If every `neighborhood`_ of :math:`p` contains :math:`q\ne p` such that :math:`q
 
 In other words, we say :math:`p\in E` is a **limit point** if: :math:`\forall N_r(p), \exists q\ne p` such that :math:`q\in E`.
 
+
+.. _isolated-point:
+
 Isolated point
 **************
 Let :math:`X` be a `metric space`_, :math:`E\subset X`, a point :math:`p\in X`.
 
 If :math:`p\in E` is not a `limit point`_ of :math:`E`, then :math:`p` is called an **isolated point** of :math:`E`.
+
+.. _interior-point:
 
 Interior point
 **************
@@ -110,19 +122,27 @@ Let :math:`X` be a `metric space`_, :math:`E\subset X`, a point :math:`p\in X`.
 
 If :math:`\exists N_r(p)` such that :math:`N_r(p) \subset E`, then :math:`p` is an **interior point** of :math:`E`.
 
+
+.. _closed-set:
+
 Closed set
 **********
 Let :math:`X` be a `metric space`_, :math:`E\subset X`.
 
-We say :math:`E` is a **closed set** if every `limit point`_ of :math:`E` is a point of :math:`E`.
+We say :math:`E` is a **closed set** if :math:`E` contains its every `limit point`_.
 
-In other words, we say :math:`E` is a **closed set** if: if :math:`p` is a limit point of :math:`E`, then :math:`p\in E`.
+In other words, if a point :math:`p` is the `limit point`_ of :math:`E`, then :math:`p\in E`.
+
+
+.. _open-set:
 
 Open set
 ********
 Let :math:`X` be a `metric space`_, :math:`E\subset X`.
 
 :math:`E` is an **open set** if every point of :math:`E` is an `interior point`_ of :math:`E`.
+
+.. _complement-set:
 
 Complement set
 **************
@@ -131,11 +151,15 @@ Let :math:`X` be a `metric space`_, :math:`E\subset X`.
 The **complement set** of :math:`E` (denoted by :math:`E^c = X-E`) is the set of all points :math:`p\in X` such that :math:`p\notin E`.
 
 
+.. _perfect-set:
+
 Perfect set
 ***********
 Let :math:`X` be a `metric space`_, :math:`E\subset X`.
 
 If :math:`E` is a `closed set`_ (every `limit point`_ of :math:`E` is a point of :math:`E`) and if every point of :math:`E` is a `limit point`_ of :math:`E`.
+
+.. _bounded-set:
 
 Bounded set
 ***********
@@ -143,11 +167,15 @@ Let :math:`X` be a `metric space`_, :math:`E\subset X`.
 
 :math:`E` is a **bounded set** if :math:`\exists M\in\mathbb{R}` and a point :math:`q\in X` such that :math:`d(p,q)<M~\forall p\in E`.
 
+.. _dense-set:
+
 Dense
 *****
 Let :math:`X` be a `metric space`_, :math:`E\subset X`.
 
 :math:`E` is **dense** in :math:`X` if every point of :math:`X` is a `limit point`_ of :math:`E`, or a point of :math:`E` (or both).
+
+.. _closure:
 
 Closure
 *******
