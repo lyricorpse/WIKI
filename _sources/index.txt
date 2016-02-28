@@ -21,7 +21,7 @@ Still, people working on mathematics can use it for their work since basic conce
 Mathwiki is powered by `Sphinx <http://www.sphinx-doc.org>`_ -- a Python documentation generator.
 I use it as a wiki system since it has features:
 
-* Auto generated links for each headings.
+* Auto generated links for each heading.
 * `MathJax <https://www.mathjax.org/>`_ support.
 * HTML generation with easy cross referencing and nice builtin themes.
 * Editting with `reStructuredText <http://docutils.sourceforge.net/rst.html>`_ (a markup language that is lightweighted).
