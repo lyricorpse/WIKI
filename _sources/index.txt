@@ -16,7 +16,7 @@ There are `Wikipedia <https://www.wikipedia.org>`_ and `Wolfram MathWorld <http:
 The content is mainly abstracted from the textbooks that I used for my class and from the Internet resources, with my own editting and notation for the convenience of understanding.
 The references for the content are listed in the end of each webpage.
 It is very personal, specific about what I have learnt in my class.
-Still, people working on mathematics can use this for their work since basic concepts are lists.
+Still, people working on mathematics can use it for their work since basic concepts are listed.
 
 Mathwiki is powered by `Sphinx <http://www.sphinx-doc.org>`_ -- a Python documentation generator.
 I use it as a wiki system since it has features:

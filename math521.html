@@ -118,13 +118,17 @@ If <span class="math">\(E\subset S\)</span>, <span class="math">\(E\ne \emptyset
 <span id="id2"></span><h3>Neighborhood<a class="headerlink" href="#neighborhood" title="Permalink to this headline">¶</a></h3>
 <p>Let <span class="math">\(X\)</span> be a <a class="reference internal" href="#id1">metric space</a>, <span class="math">\(p\)</span> is a point in <span class="math">\(X\)</span>.</p>
 <p>A <strong>neighborhood</strong> of <span class="math">\(p\)</span> is a set <span class="math">\(N_r(p) = \{q\in X | d(p,q) &lt; r\}\)</span>, for some radius <span class="math">\(r&gt;0\)</span>.</p>
-<p>Every neighborhood is an <a class="reference internal" href="#id7">open set</a>.</p>
+<p>Theorem:</p>
+<ul class="simple">
+<li>Every neighborhood is an <a class="reference internal" href="#id7">open set</a>.</li>
+</ul>
 </div>
 <div class="section" id="limit-point">
 <span id="id3"></span><h3>Limit point<a class="headerlink" href="#limit-point" title="Permalink to this headline">¶</a></h3>
 <p>Let <span class="math">\(X\)</span> be a <a class="reference internal" href="#id1">metric space</a>, <span class="math">\(E\subset X\)</span>, a point <span class="math">\(p\in X\)</span>.</p>
 <p>If every <a class="reference internal" href="#neighborhood">neighborhood</a> of <span class="math">\(p\)</span> contains <span class="math">\(q\ne p\)</span> such that <span class="math">\(q\in E\)</span>, then <span class="math">\(p\)</span> is a <strong>limit point</strong> of <span class="math">\(E\)</span>.</p>
-<p>In other words, we say <span class="math">\(p\in E\)</span> is a <strong>limit point</strong> if: <span class="math">\(\forall N_r(p), \exists q\ne p\)</span> such that <span class="math">\(q\in E\)</span>.</p>
+<p>In other words, we say <span class="math">\(p\in E\)</span> is a <strong>limit point</strong> of <span class="math">\(E\)</span> if: <span class="math">\(\forall N_r(p), \exists q\ne p\)</span> such that <span class="math">\(q\in E\)</span>.</p>
+<p>Or, we say <span class="math">\(p\in E\)</span> is a <strong>limit point</strong> of <span class="math">\(E\)</span> if: <span class="math">\(p\)</span> is infinitely close to a point <span class="math">\(q\ne p\)</span> such that <span class="math">\(q\in E\)</span>.</p>
 </div>
 <div class="section" id="isolated-point">
 <span id="id4"></span><h3>Isolated point<a class="headerlink" href="#isolated-point" title="Permalink to this headline">¶</a></h3>
@@ -135,6 +139,7 @@ If <span class="math">\(E\subset S\)</span>, <span class="math">\(E\ne \emptyset
 <span id="id5"></span><h3>Interior point<a class="headerlink" href="#interior-point" title="Permalink to this headline">¶</a></h3>
 <p>Let <span class="math">\(X\)</span> be a <a class="reference internal" href="#id1">metric space</a>, <span class="math">\(E\subset X\)</span>, a point <span class="math">\(p\in X\)</span>.</p>
 <p>If <span class="math">\(\exists N_r(p)\)</span> such that <span class="math">\(N_r(p) \subset E\)</span>, then <span class="math">\(p\)</span> is an <strong>interior point</strong> of <span class="math">\(E\)</span>.</p>
+<p>In other words, we say <span class="math">\(p\)</span> is an <strong>interior point</strong> of <span class="math">\(E\)</span> if we can put a <a class="reference internal" href="#neighborhood">neighborhood</a> <span class="math">\(N\)</span> (an open ball) centered at <span class="math">\(p\)</span> such that <span class="math">\(N\subset E\)</span>.</p>
 </div>
 <div class="section" id="closed-set">
 <span id="id6"></span><h3>Closed set<a class="headerlink" href="#closed-set" title="Permalink to this headline">¶</a></h3>

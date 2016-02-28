@@ -92,7 +92,10 @@ Let :math:`X` be a `metric space`_, :math:`p` is a point in :math:`X`.
 
 A **neighborhood** of :math:`p` is a set :math:`N_r(p) = \{q\in X | d(p,q) < r\}`, for some radius :math:`r>0`.
 
-Every neighborhood is an `open set`_.
+
+Theorem:
+
+* Every neighborhood is an `open set`_.
 
 
 .. _limit-point:
@@ -103,7 +106,9 @@ Let :math:`X` be a `metric space`_, :math:`E\subset X`, a point :math:`p\in X`.
 
 If every `neighborhood`_ of :math:`p` contains :math:`q\ne p` such that :math:`q\in E`, then :math:`p` is a **limit point** of :math:`E`.
 
-In other words, we say :math:`p\in E` is a **limit point** if: :math:`\forall N_r(p), \exists q\ne p` such that :math:`q\in E`.
+In other words, we say :math:`p\in E` is a **limit point** of :math:`E` if: :math:`\forall N_r(p), \exists q\ne p` such that :math:`q\in E`.
+
+Or, we say :math:`p\in E` is a **limit point** of :math:`E` if: :math:`p` is infinitely close to a point :math:`q\ne p` such that :math:`q\in E`.
 
 
 .. _isolated-point:
@@ -121,6 +126,8 @@ Interior point
 Let :math:`X` be a `metric space`_, :math:`E\subset X`, a point :math:`p\in X`.
 
 If :math:`\exists N_r(p)` such that :math:`N_r(p) \subset E`, then :math:`p` is an **interior point** of :math:`E`.
+
+In other words, we say :math:`p` is an **interior point** of :math:`E` if we can put a `neighborhood`_ :math:`N` (an open ball) centered at :math:`p` such that :math:`N\subset E`.
 
 
 .. _closed-set:
