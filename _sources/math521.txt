@@ -106,7 +106,7 @@ Let :math:`X` be a `metric space`_, :math:`E\subset X`, a point :math:`p\in X`.
 
 If every `neighborhood`_ of :math:`p` contains :math:`q\ne p` such that :math:`q\in E`, then :math:`p` is a **limit point** of :math:`E`.
 
-In other words, we say :math:`p\in E` is a **limit point** of :math:`E` if: :math:`\forall N_r(p), \exists q\ne p` such that :math:`q\in E`.
+In other words, we say :math:`p\in E` is a **limit point** of :math:`E` if: :math:`\forall r>0, \exists q\in E` such that :math:`d(p,q) < r`.
 
 Or, we say :math:`p\in E` is a **limit point** of :math:`E` if: :math:`p` is infinitely close to a point :math:`q\ne p` such that :math:`q\in E`.
 
