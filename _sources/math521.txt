@@ -106,7 +106,7 @@ Let :math:`X` be a `metric space`_, :math:`E\subset X`, a point :math:`p\in X`.
 
 If every `neighborhood`_ of :math:`p` contains :math:`q\ne p` such that :math:`q\in E`, then :math:`p` is a **limit point** of :math:`E`.
 
-In other words, we say :math:`p\in E` is a **limit point** of :math:`E` if: :math:`\forall r>0, \exists q\in E` such that :math:`d(p,q) < r`.
+In other words, we say :math:`p\in E` is a **limit point** of :math:`E` if: :math:`\forall r>0, \exists q\in E, q\ne p`, such that :math:`d(p,q) < r`.
 
 Or, we say :math:`p\in E` is a **limit point** of :math:`E` if: :math:`p` is infinitely close to a point :math:`q\ne p` such that :math:`q\in E`.
 
@@ -231,6 +231,18 @@ Some theorems:
 * Compact subsets of metric spaces are closed.
 * Compact subsets of compact sets are compact.
 * If :math:`F` is closed and :math:`K` is compact, then :math:`F\cap K` is compact.
+
+.. _heine-borel-theorem:
+
+Heine-Borel theorem
+*******************
+
+If a set :math:`E\in \mathbb{R}^k` has one of the following three properties,
+then it has the other two:
+
+* :math:`E` is closed and bounded.
+* :math:`E` is compact.
+* Every infinite subset of :math:`E` has a limit point in :math:`E`.
 
 References
 ----------

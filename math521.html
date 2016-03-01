@@ -127,7 +127,7 @@ If <span class="math">\(E\subset S\)</span>, <span class="math">\(E\ne \emptyset
 <span id="id3"></span><h3>Limit point<a class="headerlink" href="#limit-point" title="Permalink to this headline">¶</a></h3>
 <p>Let <span class="math">\(X\)</span> be a <a class="reference internal" href="#id1">metric space</a>, <span class="math">\(E\subset X\)</span>, a point <span class="math">\(p\in X\)</span>.</p>
 <p>If every <a class="reference internal" href="#neighborhood">neighborhood</a> of <span class="math">\(p\)</span> contains <span class="math">\(q\ne p\)</span> such that <span class="math">\(q\in E\)</span>, then <span class="math">\(p\)</span> is a <strong>limit point</strong> of <span class="math">\(E\)</span>.</p>
-<p>In other words, we say <span class="math">\(p\in E\)</span> is a <strong>limit point</strong> of <span class="math">\(E\)</span> if: <span class="math">\(\forall r&gt;0, \exists q\in E\)</span> such that <span class="math">\(d(p,q) &lt; r\)</span>.</p>
+<p>In other words, we say <span class="math">\(p\in E\)</span> is a <strong>limit point</strong> of <span class="math">\(E\)</span> if: <span class="math">\(\forall r&gt;0, \exists q\in E, q\ne p\)</span>, such that <span class="math">\(d(p,q) &lt; r\)</span>.</p>
 <p>Or, we say <span class="math">\(p\in E\)</span> is a <strong>limit point</strong> of <span class="math">\(E\)</span> if: <span class="math">\(p\)</span> is infinitely close to a point <span class="math">\(q\ne p\)</span> such that <span class="math">\(q\in E\)</span>.</p>
 </div>
 <div class="section" id="isolated-point">
@@ -213,16 +213,26 @@ If <span class="math">\(E\subset S\)</span>, <span class="math">\(E\ne \emptyset
 <li>If <span class="math">\(F\)</span> is closed and <span class="math">\(K\)</span> is compact, then <span class="math">\(F\cap K\)</span> is compact.</li>
 </ul>
 </div>
+<div class="section" id="heine-borel-theorem">
+<span id="id12"></span><h3>Heine-Borel theorem<a class="headerlink" href="#heine-borel-theorem" title="Permalink to this headline">¶</a></h3>
+<p>If a set <span class="math">\(E\in \mathbb{R}^k\)</span> has one of the following three properties,
+then it has the other two:</p>
+<ul class="simple">
+<li><span class="math">\(E\)</span> is closed and bounded.</li>
+<li><span class="math">\(E\)</span> is compact.</li>
+<li>Every infinite subset of <span class="math">\(E\)</span> has a limit point in <span class="math">\(E\)</span>.</li>
+</ul>
+</div>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<table class="docutils footnote" frame="void" id="id12" rules="none">
+<table class="docutils footnote" frame="void" id="id13" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label">[1]</td><td>Rudin, W. The Principles of Mathematical Analysis. (McGraw-Hill Publishing Company, 1976).</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id13" rules="none">
+<table class="docutils footnote" frame="void" id="id14" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label">[2]</td><td>Wikipedia.</td></tr>
@@ -271,6 +281,7 @@ If <span class="math">\(E\subset S\)</span>, <span class="math">\(E\ne \emptyset
 <li><a class="reference internal" href="#compact-set">Compact set</a><ul>
 <li><a class="reference internal" href="#open-cover">Open cover</a></li>
 <li><a class="reference internal" href="#compact">Compact</a></li>
+<li><a class="reference internal" href="#heine-borel-theorem">Heine-Borel theorem</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#references">References</a></li>
